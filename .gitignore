@@ -1,0 +1,12 @@
+# Executables
+*.slxc
+*.eps
+*.asv
+*.slxc
+*.autosave
+*.bin
+*.elf
+*.ini
+*v2017*
+
+slprj/
