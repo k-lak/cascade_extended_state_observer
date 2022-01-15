@@ -17,7 +17,7 @@ readLogsoutData;
 % Plot data
 h1 = figure;
 
-% Output
+%% Output
 subplot(3,2,1);
 hold on;
 grid on;
@@ -44,7 +44,7 @@ legend('Clear','Estimated','Measured','Desired')
 xlabel('t[s]');
 ylabel('y');
 
-% Error
+%% Error
 subplot(3,2,2);
 hold on;
 grid on;
@@ -55,14 +55,12 @@ if(Sensor.quantization.enabled == 0)
 else
     stairs(y.Values.Time, e.Values.Data,'LineWidth',1.5);
 end
-% plot(t, refSig.Values.Data(:,1).*0+tunnel,'--','Color',[.8 .5 .5],'LineWidth',1.5);
-% plot(t, refSig.Values.Data(:,1).*0-tunnel,'--','Color',[.8 .5 .5],'LineWidth',1.5);
 title('Control error');
 legend('Clear','Estimated','Measured')
 xlabel('t[s]');
-ylabel('y');
+ylabel('e');
 
-% Disturbance
+%% Disturbance
 subplot(3,2,3);
 hold on;
 grid on;
@@ -79,7 +77,7 @@ legend('Real','Estimated')
 xlabel('t[s]');
 ylabel('d');
 
-% Observation error
+%% Observation error
 subplot(3,2,4);
 hold on;
 grid on;
@@ -92,7 +90,7 @@ ylabel('-');
 l = legend('$\tilde{z}_1$','$\tilde{z}_2$','$\tilde{z}_3$');
 set(l,'Interpreter','latex')
 
-% Control signal
+%% Control signal
 subplot(3,2,5);
 hold on;
 grid on;
@@ -100,17 +98,3 @@ plot(u.Values.Time,u.Values.Data,'LineWidth',1.5);
 title('Control signal');
 xlabel('t[s]');
 ylabel('u');
-
-% Quality criteria
-Je = sum(sqrt(e.Values.Data.^2).*[diff(e.Values.Time); 0]);
-Ju = sum(u.Values.Data.^2.*[diff(u.Values.Time); 0]);
-Jz1 = sum(sqrt((z_hat.Values.Data(:,1)-refSig.Values.Data+x.Values.Data(:,1)).^2).*[diff(z_hat.Values.Time); 0]);
-Jd = sum(sqrt((z_hat.Values.Data(:,3)-realDisturbance).^2).*[diff(z_hat.Values.Time); 0]);
-a=annotation('textbox', [0.6 0.2 0.1 0.1], 'String', "$J_e =$ "+Je);
-set(a,'Interpreter','latex','EdgeColor','none');
-a=annotation('textbox', [0.6 0.16 0.1 0.1], 'String', "$J_u =$ "+Ju);
-set(a,'Interpreter','latex','EdgeColor','none');
-a=annotation('textbox', [0.6 0.12 0.1 0.1], 'String', "$J_{z1} =$ "+Jz1);
-set(a,'Interpreter','latex','EdgeColor','none');
-a=annotation('textbox', [0.6 0.08 0.1 0.1], 'String', "$J_d =$ "+Jd);
-set(a,'Interpreter','latex','EdgeColor','none');

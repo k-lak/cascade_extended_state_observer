@@ -76,7 +76,7 @@ z_hatESOn6 = z_hat;
 
 %% CESO p = 2
 disp("CESOm, p=2");
-Observer.type = 9;
+Observer.type = 5;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
 w01 = 371*gainMultiplier;
@@ -98,7 +98,7 @@ z_hatCESOp2 = z_hat;
 
 %% CESO p = 3
 disp("CESOm, p=3");
-Observer.type = 10;
+Observer.type = 6;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
 w01 = 193.274*gainMultiplier;
@@ -120,7 +120,7 @@ z_hatCESOp3 = z_hat;
 
 %% CESO p = 4
 disp("CESOm, p=4");
-Observer.type = 11;
+Observer.type = 7;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
 w01 = 142.0993*gainMultiplier;
@@ -142,7 +142,7 @@ z_hatCESOp4 = z_hat;
 
 %% CESO p = 5
 disp("CESOm, p=5");
-Observer.type = 12;
+Observer.type = 8;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
 w01 = 99.0583*gainMultiplier;

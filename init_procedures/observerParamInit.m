@@ -4,10 +4,10 @@ Observer.type = 1; % 1 - ESO, n=3
                    % 2 - ESO, n=4
                    % 3 - ESO, n=5
                    % 4 - ESO, n=6
-                   % 9 - lumped CESO, p=2
-                   % 10 - lumped CESO, p=3
-                   % 11 - lumped CESO, p=4
-                   % 12 - lumped CESO, p=5
+                   % 5 - CESO, p=2
+                   % 6 - CESO, p=3
+                   % 7 - CESO, p=4
+                   % 8 - CESO, p=5
 
 %% CESO Properties
 global cascadedESO

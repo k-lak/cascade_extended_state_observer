@@ -3,10 +3,10 @@ assignin('base','ESO_OBSERVER', Simulink.Variant('OBSERVER_TYPE==1'));
 assignin('base','ESO_OBSERVER_N4', Simulink.Variant('OBSERVER_TYPE==2'));
 assignin('base','ESO_OBSERVER_N5', Simulink.Variant('OBSERVER_TYPE==3'));
 assignin('base','ESO_OBSERVER_N6', Simulink.Variant('OBSERVER_TYPE==4'));
-assignin('base','LUMPED_CESO_P2', Simulink.Variant('OBSERVER_TYPE==9'));
-assignin('base','LUMPED_CESO_P3', Simulink.Variant('OBSERVER_TYPE==10'));
-assignin('base','LUMPED_CESO_P4', Simulink.Variant('OBSERVER_TYPE==11'));
-assignin('base','LUMPED_CESO_P5', Simulink.Variant('OBSERVER_TYPE==12'));
+assignin('base','CESO_P2', Simulink.Variant('OBSERVER_TYPE==5'));
+assignin('base','CESO_P3', Simulink.Variant('OBSERVER_TYPE==6'));
+assignin('base','CESO_P4', Simulink.Variant('OBSERVER_TYPE==7'));
+assignin('base','CESO_P5', Simulink.Variant('OBSERVER_TYPE==8'));
 
 assignin('base','PROCESS_DISTURBANCE_ENABLED', ProcessDisturbance.enabled);                   
 assignin('base','PROCESS_DISTURBANCE_OFF', Simulink.Variant('PROCESS_DISTURBANCE_ENABLED==0'));
