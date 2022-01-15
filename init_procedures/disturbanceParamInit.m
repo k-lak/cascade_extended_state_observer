@@ -1,20 +1,19 @@
 %% Disturbances
 global ProcessDisturbance
 ProcessDisturbance.enabled = 1; % Disturbance: 0 -off
-                         %              1 - on
+                                %              1 - on
                          
 ProcessDisturbance.type = 2;  % Type of disturbance: 1 - step value
-                       %                             2 - sine wave 
-                       %                             3 - different
-                       %                             disturbances
-                       %                             4 - same as 3 bat
-                       %                             scaled in time
-                       %                             5 - rectangular pulse
-                       %                             6 - double sine
+                              %                      2 - sine wave 
+                              %                      3 - varying disturbances
+                              %                      4 - varying disturbances scaled in time
+                              %                      5 - rectangular pulse
+                              %                      6 - double sine
 % For step value:
 ProcessDisturbance.step.time = 3.5;
 ProcessDisturbance.step.initialValue = 0;
 ProcessDisturbance.step.finalValue = 2.0;
+
 % For sine wave:
 ProcessDisturbance.sine.startTime = 3.5;
 ProcessDisturbance.sine.amplitude = 5;
@@ -34,7 +33,7 @@ ProcessDisturbance.doubleSine.phaseSecond = pi/2;
 
 global OutputDisturbance
 OutputDisturbance.enabled = 0; % Disturbance: 0 -off
-                         %              1 - on
+                               %              1 - on
                          
 OutputDisturbance.type = 2;  % Type of disturbance: 1 - step value
                        %                      2 - sine wave 

@@ -38,17 +38,6 @@ Plant.suspensionBall.K1 = miu0*N^2*i0*A/(m*2*x0^2*Ka);
 Plant.suspensionBall.K2 = miu0*N^2*i0^2*A/(m*2*x0^3);
 Plant.suspensionBall.x0 = [-10.02/1000 0 0];
 
-%% Maglev suspension
-Plant.maglevSuspension.Ms = 1000;
-Plant.maglevSuspension.Kb = 0.0015;
-Plant.maglevSuspension.Kf = 9810;
-Plant.maglevSuspension.Rc = 10;
-Plant.maglevSuspension.g = 9.81;
-Plant.maglevSuspension.Lc = 0.1;
-Plant.maglevSuspension.Nc = 2000;
-Plant.maglevSuspension.Ap = 0.01;
-Plant.maglevSuspension.x0 = [10;0;0.015];
-
 %% Saturation of actuators
 Plant.controlSignalSaturation.enabled = 0; % 0 - off 
                                            % 1 - on
