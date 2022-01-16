@@ -3,7 +3,6 @@ function [ out ] = dcdcBuckConverter( input )
 
     A = Plant.dcdcBuckConverter.A;
     B = Plant.dcdcBuckConverter.B;
-    C = Plant.dcdcBuckConverter.C;
 
     x = input(1:2);
     u = input(3);

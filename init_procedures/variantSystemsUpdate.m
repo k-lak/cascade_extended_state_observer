@@ -40,5 +40,4 @@ assignin('base','SENSOR_SAMPLING_ON', Simulink.Variant('SENSOR_SAMPLING_ENABLED=
 assignin('base','CONTROL_PLANT_TYPE', Plant.type);                   
 assignin('base','TRANSFER_FUNCTION', Simulink.Variant('CONTROL_PLANT_TYPE==1'));
 assignin('base','DCDC_BUCK_CONVERTER', Simulink.Variant('CONTROL_PLANT_TYPE==2'));
-assignin('base','SUSPENSION_BALL', Simulink.Variant('CONTROL_PLANT_TYPE==3'));
-assignin('base','TRANSFER_FUNCTION_TIME_VARYING', Simulink.Variant('CONTROL_PLANT_TYPE==4'));
+assignin('base','TRANSFER_FUNCTION_TIME_VARYING', Simulink.Variant('CONTROL_PLANT_TYPE==3'));
