@@ -1,7 +1,7 @@
-function [ z_hat_p ] = esoObserverN6( input )
+function [ z_hat_p ] = gpioObserverM4( input )
     global ESO Controller
 
-    b_hat = Controller.adrc.inputMatrixEstimate;
+    b_hat = Controller.adrc.inputGainEstimate;
     L = ESO.gainVectorN6;
 
     z_hat = input(1:6);

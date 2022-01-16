@@ -1,7 +1,7 @@
 function [u] = adrc(input)
     global Controller 
 
-    b_hat = Controller.adrc.inputMatrixEstimate;
+    b_hat = Controller.adrc.inputGainEstimate;
     K = Controller.adrc.gainMatrix;
 
     z_hat = input(1:3);

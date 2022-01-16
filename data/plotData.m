@@ -1,5 +1,5 @@
 global Controller Plant RefSig Sensor
-b_hat = Controller.adrc.inputMatrixEstimate;
+b_hat = Controller.adrc.inputGainEstimate;
 
 if(Plant.type == 1)
     B = Plant.transferFunction.B;

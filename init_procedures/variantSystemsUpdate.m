@@ -1,8 +1,8 @@
 assignin('base','OBSERVER_TYPE', Observer.type);                   
 assignin('base','ESO_OBSERVER', Simulink.Variant('OBSERVER_TYPE==1'));
-assignin('base','ESO_OBSERVER_N4', Simulink.Variant('OBSERVER_TYPE==2'));
-assignin('base','ESO_OBSERVER_N5', Simulink.Variant('OBSERVER_TYPE==3'));
-assignin('base','ESO_OBSERVER_N6', Simulink.Variant('OBSERVER_TYPE==4'));
+assignin('base','GPIO_OBSERVER_M2', Simulink.Variant('OBSERVER_TYPE==2'));
+assignin('base','GPIO_OBSERVER_M3', Simulink.Variant('OBSERVER_TYPE==3'));
+assignin('base','GPIO_OBSERVER_M4', Simulink.Variant('OBSERVER_TYPE==4'));
 assignin('base','CESO_P2', Simulink.Variant('OBSERVER_TYPE==5'));
 assignin('base','CESO_P3', Simulink.Variant('OBSERVER_TYPE==6'));
 assignin('base','CESO_P4', Simulink.Variant('OBSERVER_TYPE==7'));

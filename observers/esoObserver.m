@@ -1,7 +1,7 @@
 function [ z_hat_p ] = esoObserver( input )
     global ESO Controller
 
-    b_hat = Controller.adrc.inputMatrixEstimate;
+    b_hat = Controller.adrc.inputGainEstimate;
     L = ESO.gainVectorN3;
 
     z_hat = input(1:3);

@@ -1,7 +1,7 @@
 function [ out ] = cesoObserverP3( input )
     global cascadedESO Controller
 
-    b_hat = Controller.adrc.inputMatrixEstimate;
+    b_hat = Controller.adrc.inputGainEstimate;
     L1 = cascadedESO.gainVectorFirst;
     L2 = cascadedESO.gainVectorSecond;
     L3 = cascadedESO.gainVectorThird;

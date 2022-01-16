@@ -1,6 +1,6 @@
 global Observer Sensor ProcessDisturbance ESO cascadedESO Plant Controller
 init;
-b_hat = Controller.adrc.inputMatrixEstimate;
+b_hat = Controller.adrc.inputGainEstimate;
 B = Plant.transferFunction.B;
 A = Plant.transferFunction.A;
 
@@ -10,7 +10,6 @@ disp("ESOm, n=3");
 Observer.type = 1;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w0 = 3000*gainMultiplier;
 w0 = 100;
 ESO.w0 = w0;
 ESO.gainVectorN3 = [3*w0, 3*w0^2, w0^3]';
@@ -25,7 +24,6 @@ disp("ESOm, n=4");
 Observer.type = 2;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w0 = 430.1304*gainMultiplier;
 w0 = 100;
 ESO.w0 = w0;
 ESO.gainVectorN3 = [3*w0, 3*w0^2, w0^3]';
@@ -43,7 +41,6 @@ disp("ESOm, n=5");
 Observer.type = 3;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w0 = 283.1419*gainMultiplier;
 w0 = 100;
 ESO.w0 = w0;
 ESO.gainVectorN3 = [3*w0, 3*w0^2, w0^3]';
@@ -61,7 +58,6 @@ disp("ESOm, n=6");
 Observer.type = 4;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w0 =  302.5756*gainMultiplier;
 w0 = 100;
 ESO.w0 = w0;
 ESO.gainVectorN3 = [3*w0, 3*w0^2, w0^3]';
@@ -79,7 +75,6 @@ disp("CESOm, p=2");
 Observer.type = 5;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w01 = 371*gainMultiplier;
 w01 = 100;
 w02 = 2*w01;
 w03 = 2*w02;
@@ -101,7 +96,6 @@ disp("CESOm, p=3");
 Observer.type = 6;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w01 = 193.274*gainMultiplier;
 w01 = 100;
 w02 = 2*w01;
 w03 = 2*w02;
@@ -123,7 +117,6 @@ disp("CESOm, p=4");
 Observer.type = 7;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w01 = 142.0993*gainMultiplier;
 w01 = 100;
 w02 = 2*w01;
 w03 = 2*w02;
@@ -145,7 +138,6 @@ disp("CESOm, p=5");
 Observer.type = 8;
 Sensor.noise.enabled = 0;
 ProcessDisturbance.enabled = 1;
-w01 = 99.0583*gainMultiplier;
 w01 = 100;
 w02 = 2*w01;
 w03 = 2*w02;
@@ -177,7 +169,7 @@ l = legend('ESO, $n=3$','ESO, $n=4$','ESO, $n=5$','ESO, $n=6$');
 set(l,'Interpreter','latex')
 
 %% Plot Observation error
-h1 = figure;
+h2 = figure;
 hold on;
 grid on;
 plot(z_hatESOn3.Values.Time,z_hatESOn3.Values.Data(:,3)-realDisturbanceESOn3,'LineWidth',1.5);
@@ -192,7 +184,7 @@ l = legend('ESO, $n=3$','CESO, $p=2$','CESO, $p=3$','CESO, $p=4$','CESO, $p=5$')
 set(l,'Interpreter','latex')
 
 %% Plot Observation error
-h1 = figure;
+h3 = figure;
 hold on;
 grid on;
 plot(z_hatESOn4.Values.Time,z_hatESOn4.Values.Data(:,3)-realDisturbanceESOn4,'LineWidth',1.5);
@@ -204,7 +196,7 @@ l = legend('ESO, $n=4$','CESO, $p=2$');
 set(l,'Interpreter','latex')
 
 %% Plot Observation error
-h1 = figure;
+h4 = figure;
 hold on;
 grid on;
 plot(z_hatESOn5.Values.Time,z_hatESOn5.Values.Data(:,3)-realDisturbanceESOn5,'LineWidth',1.5);
@@ -216,7 +208,7 @@ l = legend('ESO, $n=5$','CESO, $p=3$');
 set(l,'Interpreter','latex')
 
 %% Plot Observation error
-h1 = figure;
+h5 = figure;
 hold on;
 grid on;
 plot(z_hatESOn6.Values.Time,z_hatESOn6.Values.Data(:,3)-realDisturbanceESOn6,'LineWidth',1.5);
@@ -272,7 +264,7 @@ fCESOp3 = Fs*(0:(lCESOp3/2))/lCESOp3;
 fCESOp4 = Fs*(0:(lCESOp4/2))/lCESOp4;
 fCESOp5 = Fs*(0:(lCESOp5/2))/lCESOp5;
 
-h1 = figure;
+h6 = figure;
 hold on;
 grid on;
 plot(fESOn3,P1ESOn3,'LineWidth',1.5) 
@@ -285,15 +277,3 @@ xlabel('f[Hz[');
 ylabel('-');
 l = legend('ESO, $n=3$','CESO, $p=2$','CESO, $p=3$','CESO, $p=4$','CESO, $p=5$');
 set(l,'Interpreter','latex')
-
-% %% Plot Observation error
-% h1 = figure;
-% hold on;
-% grid on;
-% plot(z_hatCESOp4.Values.Time,z_hatCESOp4.Values.Data(:,3)-realDisturbanceCESOp4,'LineWidth',1.5);
-% plot(z_hatCESOp5.Values.Time,z_hatCESOp5.Values.Data(:,3)-realDisturbanceCESOp5,'LineWidth',1.5);
-% title('Observation errors');
-% xlabel('t[s]');
-% ylabel('\tilde{d}');
-% l = legend('CESO, $p=4$','CESO, $p=5$');
-% set(l,'Interpreter','latex')
