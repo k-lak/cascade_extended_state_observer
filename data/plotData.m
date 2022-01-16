@@ -29,13 +29,9 @@ elseif(RefSig.type == 2)
 else
     tunnel = 0;
 end
-plot(y_qstar.Values.Time, y_tstar.Values.Data(:,1),'LineWidth',1.5);
+plot(y_dstar.Values.Time, y_dstar.Values.Data(:,1),'LineWidth',1.5);
 plot(z_hat.Values.Time, -z_hat.Values.Data(:,1)+refSig.Values.Data,'LineWidth',1.5);
-if(Sensor.quantization.enabled == 0)
-    plot(y.Values.Time, y.Values.Data,'LineWidth',1.5);
-else
-    stairs(y.Values.Time, y.Values.Data,'LineWidth',1.5);
-end
+plot(y.Values.Time, y.Values.Data,'LineWidth',1.5);
 plot(t, refSig.Values.Data(:,1),'LineWidth',1.5);
 plot(t, refSig.Values.Data(:,1)+tunnel,'--','Color',[.8 .5 .5],'LineWidth',1.5);
 plot(t, refSig.Values.Data(:,1)-tunnel,'--','Color',[.8 .5 .5],'LineWidth',1.5);
@@ -48,13 +44,9 @@ ylabel('y');
 subplot(3,2,2);
 hold on;
 grid on;
-plot(x.Values.Time, refSig.Values.Data-y_tstar.Values.Data(:,1),'LineWidth',1.5);
+plot(x.Values.Time, refSig.Values.Data-y_dstar.Values.Data(:,1),'LineWidth',1.5);
 plot(t, z_hat.Values.Data(:,1),'LineWidth',1.5);
-if(Sensor.quantization.enabled == 0)
-    plot(y.Values.Time, e.Values.Data,'LineWidth',1.5);
-else
-    stairs(y.Values.Time, e.Values.Data,'LineWidth',1.5);
-end
+plot(y.Values.Time, e.Values.Data,'LineWidth',1.5);
 title('Control error');
 legend('Clear','Estimated','Measured')
 xlabel('t[s]');
@@ -64,7 +56,7 @@ ylabel('e');
 subplot(3,2,3);
 hold on;
 grid on;
-if(Plant.type == 4)
+if(Plant.type == 3)
     g = (1+0.2*tanh((x.Values.Time-2)))./(abs(x.Values.Data(:,1))+1);
     realDisturbance = refSigSecondDerivative.Values.Data-(A(2,:)*(x.Values.Data(:,1:2))')'+(b_hat - g).*u.Values.Data-g.*dp.Values.Data;
 else

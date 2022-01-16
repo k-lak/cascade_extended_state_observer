@@ -3,12 +3,11 @@ global ProcessDisturbance
 ProcessDisturbance.enabled = 1; % Disturbance: 0 -off
                                 %              1 - on
                          
-ProcessDisturbance.type = 2;  % Type of disturbance: 1 - step value
+ProcessDisturbance.type = 1;  % Type of disturbance: 1 - step value
                               %                      2 - sine wave 
                               %                      3 - varying disturbances
                               %                      4 - varying disturbances scaled in time
-                              %                      5 - rectangular pulse
-                              %                      6 - double sine
+                              %                      5 - double sine
 %% For step value:
 ProcessDisturbance.step.time = 3.5;
 ProcessDisturbance.step.initialValue = 0;

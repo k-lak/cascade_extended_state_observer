@@ -27,7 +27,6 @@ assignin('base','CONTROL_SIGNAL_SATURATION_OFF', Simulink.Variant('CONTROL_SIGNA
 assignin('base','SENSOR_NOISE_TYPE', Sensor.noise.type);                   
 assignin('base','SENSOR_NOISE_OFF', Simulink.Variant('SENSOR_NOISE_TYPE==0'));
 assignin('base','SENSOR_WHITE_NOISE_ON', Simulink.Variant('SENSOR_NOISE_TYPE==1'));
-assignin('base','SENSOR_GAUSSIAN_NOISE_ON', Simulink.Variant('SENSOR_NOISE_TYPE==2'));
 
 assignin('base','SENSOR_QUANTIZATION_ENABLED', Sensor.quantization.enabled);                   
 assignin('base','SENSOR_QUANTIZATION_OFF', Simulink.Variant('SENSOR_QUANTIZATION_ENABLED==0'));

@@ -23,4 +23,4 @@ RefSig.pulse.width = 0.5; % in [0,1]
 
 %% Reference filtering
 RefSig.filter.numerator = 1;
-RefSig.filter.denominator = [0.1^5 5*0.1^4 10*0.1^3 10*0.1^2 5*0.1 1];
+RefSig.filter.denominator = [0.01^5 5*0.01^4 10*0.01^3 10*0.01^2 5*0.01 1];

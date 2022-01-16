@@ -12,7 +12,7 @@ Observer.type = 1; % 1 - ESO
 %% CESO Properties
 global cascadedESO
 alpha = 2; % Observer bandwidth scaling factor between cascade levels
-w01 = 460/4; % Observer bandwidth of the first cascade level [rad/s]
+w01 = 50; % Observer bandwidth of the first cascade level [rad/s]
 w02 = alpha*w01; % Observer bandwidth of the second cascade level [rad/s]
 w03 = alpha*w02; % Observer bandwidth of the third cascade level [rad/s]
 w04 = alpha*w03; % Observer bandwidth of the fourth cascade level [rad/s]
@@ -25,7 +25,7 @@ cascadedESO.gainVectorFifth = [3*w05, 3*w05^2, w05^3]'; % Gain vector for the fi
 
 %% ESO/GPIO Properties
 global ESO
-w0 = 400; % Observer bandwidth [rad/s]
+w0 = 100; % Observer bandwidth [rad/s]
 ESO.w0 = w0;  
 ESO.gainVectorN3 = [3*w0, 3*w0^2, w0^3]'; % Gain vector for ESO
 ESO.gainVectorN4 = [4*w0, 6*w0^2, 4*w0^3, w0^4]'; % Gain vector for GPIO, m=2

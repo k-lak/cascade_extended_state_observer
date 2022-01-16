@@ -54,11 +54,9 @@ function [disturbance] = processDisturbanceGenerator(input)
             disturbance = 0;
         end
     elseif(ProcessDisturbance.type == 5)
-        disturbance = 0.1*rectangularPulse(mod(t*1,2)-1);
-    elseif(ProcessDisturbance.type == 6)
         if(t > ProcessDisturbance.sine.startTime)
-            disturbance = ProcessDisturbance.doubleSine.amplitudeFirst*sin(ProcessDisturbance.doubleSine.pulsationFirst*t+ProcessDisturbance.doubleSine.phaseFirst)+...
-                ProcessDisturbance.doubleSine.amplitudeSecond*sin(ProcessDisturbance.doubleSine.pulsationSecond*t+ProcessDisturbance.doubleSine.phaseSecond)+...
+            disturbance = ProcessDisturbance.doubleSine.amplitudeFirst * sin(ProcessDisturbance.doubleSine.pulsationFirst * t + ProcessDisturbance.doubleSine.phaseFirst)+...
+                ProcessDisturbance.doubleSine.amplitudeSecond * sin(ProcessDisturbance.doubleSine.pulsationSecond *  t + ProcessDisturbance.doubleSine.phaseSecond)+...
                 ProcessDisturbance.doubleSine.bias;
         else
             disturbance = 0;

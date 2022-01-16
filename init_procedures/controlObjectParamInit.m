@@ -1,6 +1,6 @@
 global Plant
 
-Plant.type = 4; % 1 - Simple transfer function
+Plant.type = 1; % 1 - Simple transfer function
                 % 2 - DCDC buck converter
                 % 3 - Transfer function time varying
 
