@@ -21,7 +21,7 @@ Two papers describing the detailed information about the developed ADRC-CESO alg
 
 ## How to download
 
-All files related to the program, including code, data, and examples, are conveniently packaged into a single \*.zip file, which can be downloaded by clicking 'Download' --> 'ZIP'.
+All files related to the program, including code, data, and examples, are conveniently packaged into a single \*.zip file, which can be downloaded by clicking 'Download' in the top right-hand corner of this website.
 
 ## How to use
 1. Run initialization script `init.m` from the root folder.
