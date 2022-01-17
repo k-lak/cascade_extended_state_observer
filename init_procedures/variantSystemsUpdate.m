@@ -28,14 +28,6 @@ assignin('base','SENSOR_NOISE_TYPE', Sensor.noise.type);
 assignin('base','SENSOR_NOISE_OFF', Simulink.Variant('SENSOR_NOISE_TYPE==0'));
 assignin('base','SENSOR_WHITE_NOISE_ON', Simulink.Variant('SENSOR_NOISE_TYPE==1'));
 
-assignin('base','SENSOR_QUANTIZATION_ENABLED', Sensor.quantization.enabled);                   
-assignin('base','SENSOR_QUANTIZATION_OFF', Simulink.Variant('SENSOR_QUANTIZATION_ENABLED==0'));
-assignin('base','SENSOR_QUANTIZATION_ON', Simulink.Variant('SENSOR_QUANTIZATION_ENABLED==1'));
-
-assignin('base','SENSOR_SAMPLING_ENABLED', Sensor.sampling.enabled);                   
-assignin('base','SENSOR_SAMPLING_OFF', Simulink.Variant('SENSOR_SAMPLING_ENABLED==0'));
-assignin('base','SENSOR_SAMPLING_ON', Simulink.Variant('SENSOR_SAMPLING_ENABLED==1'));
-
 assignin('base','CONTROL_PLANT_TYPE', Plant.type);                   
 assignin('base','TRANSFER_FUNCTION', Simulink.Variant('CONTROL_PLANT_TYPE==1'));
 assignin('base','DCDC_BUCK_CONVERTER', Simulink.Variant('CONTROL_PLANT_TYPE==2'));
