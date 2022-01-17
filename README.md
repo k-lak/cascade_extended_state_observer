@@ -24,7 +24,7 @@ All files related to the program, including code, data, and examples, are conven
 ## How to use
 1. Select initial parameters in script files in the `init_procedures` folder.
 2. Run initialization script `init.m` from the root folder.
-3. To simulate the selected control system and plot the results, run script `performSingleSimulation.m` from the `simulation_procedures` folder. 
+3. To simulate the selected control system and plot the results, run script `performSingleSimulation.m` from the `simulation_procedures` folder. Alternatively, you can simply run the `ObserverTest.slx` model and look at the results by running script `plotData.m`.
 >To run a comparison between control systems with different observer architectures, run script `performObserverComparison.m` from the `simulation_procedures` folder.
 
 ### Program tree
