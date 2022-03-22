@@ -42,7 +42,7 @@ root
 ```
 
 ## Code contributors
-- [Krzysztof Lakomy](https://scholar.google.com/citations?user=c9JRJywAAAAJ&hl=ja)
+- [Krzysztof Lakomy](https://scholar.google.com/citations?user=c9JRJywAAAAJ)
 - [Rafal Madonski](https://scholar.google.com/citations?user=5a1r0JUAAAAJ&hl=it)
 
 ## Contact
